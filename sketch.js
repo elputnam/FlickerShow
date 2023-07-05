@@ -9,7 +9,7 @@ let num;
 let alp = 0;
 let MIN = 0;
 let MAX = 100;
-let g  = 10;
+let g  = 1;
 
 //preload assets: base photo, EL, 9 squares (in array)
 function preload(){
