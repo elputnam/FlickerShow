@@ -9,7 +9,7 @@ let num;
 let alp = 0;
 let MIN = 0;
 let MAX = 100;
-let g  = 0.5;
+let g  = 1;
 
 //preload assets: base photo, EL, 9 squares (in array)
 function preload(){
@@ -51,7 +51,7 @@ function draw() {
   }
 
   //dad
-  if (frameCount%60){
+  if (frameCount%2==0){
     push();
     //translate(random(-10, 10), 0);
     tint(0, alp);
@@ -66,7 +66,10 @@ function draw() {
     g *= -1;
   }
 
-  
+
+  fill(0, random(100));
+  rect(0, 0, width, height);
+
   //EL
   image(EL, 0, 0, EL.width/2, EL.height/2)
   
@@ -75,11 +78,11 @@ function draw() {
     EL.filter(INVERT);
   }
 
-  //dancing EL
-  push();
-  translate(random(-20, 20), 0);
-  //scale(-1, 1);
-  tint(random(360), 100, 100, random(40));
-  image(EL, 0, 0, EL.width/2, EL.height/2);
-  pop();
+  // //dancing EL
+  // push();
+  // translate(random(-20, 20), 0);
+  // //scale(-1, 1);
+  // tint(random(360), 100, 100, random(40));
+  // image(EL, 0, 0, EL.width/2, EL.height/2);
+  // pop();
 }
