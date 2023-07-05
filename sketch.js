@@ -9,7 +9,7 @@ let num;
 let alp = 0;
 let MIN = 0;
 let MAX = 100;
-let g  = 1;
+let g  = 10;
 
 //preload assets: base photo, EL, 9 squares (in array)
 function preload(){
@@ -24,6 +24,7 @@ function preload(){
 function setup() {
   createCanvas(base.width/2, base.height/2);
   colorMode(HSB, 360, 100, 100, 100);
+  frameRate(30);
 }
 
 function draw() {
@@ -50,21 +51,21 @@ function draw() {
   squares[num].filter(INVERT);
   }
 
-  //dad
-  if (frameCount%2==0){
-    push();
-    //translate(random(-10, 10), 0);
-    tint(0, alp);
-    // dad.filter();
-   image(dad, 0, 0, dad.width/2, dad.height/2);
-   pop();
-   alp += g;
-  dad.filter(GRAY);
-  }
+  // //dad
+  // if (frameCount%2==0){
+  //   push();
+  //   //translate(random(-10, 10), 0);
+  //   tint(255, alp);
+  //   // dad.filter();
+  //  image(dad, 0, 0, dad.width/2, dad.height/2);
+  //  pop();
+  //  alp += g;
+  // dad.filter(GRAY);
+  // }
 
-  if (alp <= MIN || alp >= MAX ){
-    g *= -1;
-  }
+  // if (alp <= MIN || alp >= MAX ){
+  //   g *= -1;
+  // }
 
 
   fill(0, random(100));
