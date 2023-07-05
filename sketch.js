@@ -79,12 +79,18 @@ function draw() {
     EL.filter(INVERT);
     
   }
-
-  //dancing EL
-  // push();
-  // translate(random(-20, 20), 0);
-  // //scale(-1, 1);
-  // tint(random(360), 100, 100, random(40));
-  // image(EL, 0, 0, EL.width/2, EL.height/2);
-  // pop();
+  
+  if (keyIsPressed === true){ 
+   //dancing EL
+   push();
+   translate(random(-20, 20), 0);
+   //scale(-1, 1);
+   tint(random(360), 100, 100, random(40));
+   image(EL, 0, 0, EL.width/2, EL.height/2);
+   pop();
+  }
 }
+
+
+   
+
