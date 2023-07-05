@@ -1,4 +1,4 @@
-//A dynamic collage
+//A dynamic collage, I am my father's daughter
 
 let squares = [];
 let base;
