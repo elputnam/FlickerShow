@@ -24,14 +24,13 @@ function preload(){
 function setup() {
   createCanvas(base.width/2, base.height/2);
   colorMode(HSB, 360, 100, 100, 100);
-  frameRate(30);
+  frameRate(8);
 }
 
 function draw() {
   //background(0);
   //background image
-  
-  image(base, 0, 0, base.width/2, base.height/2);
+  //image(base, 0, 0, base.width/2, base.height/2);
 
   //Grid
   for (j = 0; j < squares.length; j++){
@@ -68,7 +67,8 @@ function draw() {
   // }
 
 
-  fill(0, random(100));
+  
+  fill(0, random(40, 100));
   rect(0, 0, width, height);
 
   //EL
@@ -77,9 +77,10 @@ function draw() {
   //flickering EL
   if (frameCount%int(random(20))==0){
     EL.filter(INVERT);
+    
   }
 
-  // //dancing EL
+  //dancing EL
   // push();
   // translate(random(-20, 20), 0);
   // //scale(-1, 1);
