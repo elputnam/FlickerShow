@@ -9,13 +9,13 @@ let num;
 let alp = 0;
 let MIN = 0;
 let MAX = 100;
-let g  = 1;
+let g  = 0.25;
 
 //preload assets: base photo, EL, 9 squares (in array)
 function preload(){
   base = loadImage('assets/ELDad_books_base.png');
   EL = loadImage('assets/ELDad_books_EL.png');
-  //dad = loadImage('assets/ELDad_books_dad.png')
+  dad = loadImage('assets/ELDad_books_dad.png')
   for (let i = 0; i < 9; i++){
     squares[i] = loadImage("assets/Grid_" + i + ".png");
   }  
@@ -48,26 +48,30 @@ function draw() {
   if (frameCount%5==0){
   num = int(random(9));
   squares[num].filter(INVERT);
+    
   }
 
-  // //dad
-  // if (frameCount%2==0){
-  //   push();
-  //   //translate(random(-10, 10), 0);
-  //   tint(255, alp);
-  //   // dad.filter();
-  //  image(dad, 0, 0, dad.width/2, dad.height/2);
-  //  pop();
-  //  alp += g;
-  // dad.filter(GRAY);
-  // }
-
-  // if (alp <= MIN || alp >= MAX ){
-  //   g *= -1;
-  // }
+  //dad
+    push();
+    //translate(random(-10, 10), 0);
+    tint(255, alp);
+    // dad.filter();
+    // tint(255, random(50));
+    image(dad, 0, 0, dad.width/2, dad.height/2);
+    pop();
+    alp += g;
+    dad.filter(GRAY);
 
 
-  
+    if (alp <= MIN || alp >= MAX ){
+      g *= -1;
+  }
+
+  if (frameCount%int(random(20))==0){
+    dad.filter(INVERT);
+  }
+
+  //background rect/overall flicker of the universe
   fill(0, random(40, 100));
   rect(0, 0, width, height);
 
