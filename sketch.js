@@ -9,7 +9,7 @@ let num;
 let alp = 0;
 let MIN = 0;
 let MAX = 100;
-let g  = 0.25;
+let g;
 
 //preload assets: base photo, EL, 9 squares (in array)
 function preload(){
@@ -59,6 +59,7 @@ function draw() {
     // tint(255, random(50));
     image(dad, 0, 0, dad.width/2, dad.height/2);
     pop();
+    g = random(1);
     alp += g;
     dad.filter(GRAY);
 
@@ -92,7 +93,8 @@ function draw() {
     // image(EL, 0, 0, EL.width/2, EL.height/2);
     // pop();
   
-  if (keyIsPressed === true){ 
+    if (frameCount%4==0 || frameCount%10==0){
+  //if (keyIsPressed === true){ 
    //dancing EL
    push();
    translate(random(-20, 20), 0);
